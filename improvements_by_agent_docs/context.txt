@@ -1,0 +1,158 @@
+# Astrology AI Project - Cursor IDE Rules
+
+## Project Overview
+You are working on an **Astrology AI system** that:
+- Extracts astrological knowledge from classical PDF texts (BPHS, Phaladeepika, etc.)
+- Converts natural language rules into structured data
+- Builds an intelligent knowledge base for Vedic astrology interpretation
+- Provides CLI tools for exploration and future chart interpretation
+
+## Project Context & Architecture
+
+### Current Phase: Phase 1 - Foundation & Rule Extraction
+- **Goal**: Build the learning engine and basic rule extraction
+- **Tech Stack**: Python 3.9+, SQLite, spaCy NLP, Click CLI
+- **Core Components**:
+  - DocumentProcessor: PDF text extraction
+  - RuleExtractor: NLP-based rule parsing  
+  - KnowledgeBase: SQLite storage with source attribution
+  - CLI: Command-line interface for interaction
+
+### Project Structure
+```
+astrology_ai/
+├── src/
+│   ├── __init__.py              # Main AstrologyAI class
+│   ├── data_models.py           # Pydantic/dataclass models
+│   ├── document_processor.py    # PDF extraction & text processing
+│   ├── rule_extractor.py        # NLP rule extraction with regex
+│   ├── knowledge_base.py        # SQLite database management
+│   └── cli.py                   # Click-based CLI
+├── data/
+│   ├── books/                   # PDF storage
+│   ├── rules/                   # SQLite database
+│   └── charts/                  # Future chart data
+├── config/
+│   └── sources.yaml             # Source authority hierarchy
+└── main.py                      # Entry point
+```
+
+## Coding Standards & Preferences
+
+### Python Style
+- **Type Hints**: Always use type hints for function signatures and class attributes
+- **Dataclasses/Pydantic**: Use dataclasses for simple models, Pydantic for validation
+- **Error Handling**: Comprehensive exception handling with meaningful error messages
+- **Logging**: Use Python logging module for debugging and monitoring
+- **Documentation**: Docstrings for all classes and non-trivial functions
+
+### Code Organization
+- **Single Responsibility**: Each class should have one clear purpose
+- **Dependency Injection**: Pass dependencies as constructor arguments
+- **Configuration**: Use YAML/JSON for configuration, not hardcoded values
+- **Testing**: Write testable code with clear separation of concerns
+
+### Astrology Domain Knowledge
+- **Vedic Astrology Focus**: Prioritize Vedic/Indian astrology principles
+- **Classical Sources**: BPHS (Brihat Parashara Hora Shastra), Phaladeepika are primary
+- **Source Attribution**: Always track which book/page rules come from
+- **Authority Levels**: Classical > Traditional > Modern sources
+
+## Key Data Models
+
+### AstrologicalRule
+```python
+@dataclass
+class AstrologicalRule:
+    id: str
+    text: str                    # Original rule text
+    conditions: Dict[str, Any]   # planet, house, sign, etc.
+    effects: List[str]           # Predicted outcomes
+    source: str                  # Book title
+    page: Optional[int]          # Page reference
+    authority_level: int         # 1=classical, 2=traditional, 3=modern
+    confidence: float            # Extraction confidence (0.0-1.0)
+    tags: List[str]             # Categorization tags
+    created_at: datetime
+```
+
+### Common Astrological Entities
+- **Planets**: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu
+- **Houses**: 1-12 (Lagna, Dhana, Sahaja, Bandhu, Putra, Ari, Kalatra, Randhra, Dharma, Karma, Labha, Vyaya)
+- **Signs**: Aries through Pisces (Mesha through Meena)
+- **Aspects**: Conjunction, Trine, Square, Opposition, etc.
+
+## NLP & Rule Extraction Guidelines
+
+### Pattern Recognition
+- Look for planetary positions: "Mars in 7th house", "Jupiter in Sagittarius"
+- Effect indicators: "causes", "gives", "indicates", "brings", "creates"
+- Conditional statements: "when", "if", "in own sign", "in exaltation"
+- Strength qualifiers: "strong", "weak", "debilitated", "exalted"
+
+### Extraction Priorities
+1. **Planetary house placements** (highest priority)
+2. **Planetary sign placements** 
+3. **Planetary aspects and conjunctions**
+4. **Yogas and combinations**
+5. **Dasha and transit effects** (future phases)
+
+## Development Approach
+
+### Phase 1 (Current) - Foundation
+- Focus on **rule extraction accuracy** over quantity
+- Build **robust data models** that can evolve
+- Create **comprehensive CLI** for testing and exploration
+- Establish **source hierarchy** and attribution system
+
+### Code Quality Priorities
+1. **Accuracy**: Extracted rules must be faithful to source material
+2. **Traceability**: Every rule links back to its source
+3. **Extensibility**: Easy to add new extraction patterns
+4. **Testability**: Components can be tested independently
+
+### Error Handling Patterns
+```python
+# Preferred error handling approach
+try:
+    result = process_document(pdf_path)
+    if not result.success:
+        logger.warning(f"Processing incomplete: {result.message}")
+        return ProcessingResult.partial(result.data, result.warnings)
+except DocumentError as e:
+    logger.error(f"Document processing failed: {e}")
+    return ProcessingResult.failure(str(e))
+```
+
+## CLI Design Philosophy
+- **Intuitive commands**: `process-book`, `search-rules`, `stats`
+- **Rich output**: Use colors, tables, and formatting for readability
+- **Progress indicators**: Show progress for long-running operations
+- **Helpful defaults**: Sensible default options that work out of the box
+
+## Database Design Principles
+- **Source attribution**: Every rule references its source
+- **Confidence scoring**: Track extraction confidence levels
+- **Conflict handling**: Store conflicting rules, don't automatically resolve
+- **Search optimization**: Index fields commonly used in searches
+
+## Future Considerations (Don't implement yet, but design for)
+- **Chart calculation**: Integration with astronomical libraries
+- **Web interface**: API endpoints for future web frontend
+- **Advanced NLP**: LLM integration for complex rule extraction
+- **Multiple chart types**: D-9, D-10, etc. divisional charts
+
+## When Suggesting Code
+- **Show complete functions** with proper error handling
+- **Include type hints** and docstrings
+- **Consider astrology domain** - use correct terminology
+- **Think about testing** - make code testable
+- **Plan for growth** - write extensible, not just working code
+
+## Common Patterns to Use
+- **Factory patterns** for creating different types of extractors
+- **Strategy patterns** for different rule extraction approaches  
+- **Observer patterns** for processing progress updates
+- **Builder patterns** for complex query construction
+
+Remember: This is a learning project where the developer is building their astrology knowledge alongside the AI system. Prioritize clear, educational code that demonstrates both programming principles and astrological concepts.

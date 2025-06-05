@@ -1,0 +1,160 @@
+{
+  "name": "User_Chart_Fixed",
+  "birth_date": "1990-01-15",
+  "birth_time": "14:30",
+  "birth_location": "Sample Location",
+  "planets": {
+    "Sun": {
+      "sign": "Taurus",
+      "house": 12,
+      "degree": 11.466666666666667,
+      "retrograde": false
+    },
+    "Moon": {
+      "sign": "Pisces",
+      "house": 10,
+      "degree": 26.6,
+      "retrograde": false
+    },
+    "Mercury": {
+      "sign": "Aries",
+      "house": 11,
+      "degree": 18.916666666666668,
+      "retrograde": false
+    },
+    "Venus": {
+      "sign": "Aries",
+      "house": 11,
+      "degree": 18.95,
+      "retrograde": false
+    },
+    "Mars": {
+      "sign": "Capricorn",
+      "house": 8,
+      "degree": 26.033333333333335,
+      "retrograde": false
+    },
+    "Jupiter": {
+      "sign": "Cancer",
+      "house": 2,
+      "degree": 18.15,
+      "retrograde": false
+    },
+    "Saturn": {
+      "sign": "Gemini",
+      "house": 1,
+      "degree": 5.083333333333333,
+      "retrograde": false
+    },
+    "Uranus": {
+      "sign": "Aquarius",
+      "house": 1,
+      "degree": 8.866666666666667,
+      "retrograde": false
+    },
+    "Neptune": {
+      "sign": "Capricorn",
+      "house": 1,
+      "degree": 19.25,
+      "retrograde": true
+    },
+    "Pluto": {
+      "sign": "Scorpio",
+      "house": 1,
+      "degree": 25.066666666666666,
+      "retrograde": true
+    },
+    "Rahu": {
+      "sign": "Taurus",
+      "house": 1,
+      "degree": 5.383333333333334,
+      "retrograde": true
+    },
+    "Lilith": {
+      "sign": "Aries",
+      "house": 1,
+      "degree": 17.816666666666666,
+      "retrograde": false
+    },
+    "Chiron": {
+      "sign": "Sagittarius",
+      "house": 1,
+      "degree": 23.6,
+      "retrograde": true
+    },
+    "Fortune": {
+      "sign": "Cancer",
+      "house": 1,
+      "degree": 14.85,
+      "retrograde": false
+    },
+    "Vertex": {
+      "sign": "Libra",
+      "house": 1,
+      "degree": 16.2,
+      "retrograde": false
+    },
+    "Ketu": {
+      "sign": "Scorpio",
+      "house": 1,
+      "degree": 5.383333333333334,
+      "retrograde": true
+    }
+  },
+  "houses": {
+    "1": {
+      "sign": "Pisces",
+      "lord": "Jupiter"
+    },
+    "2": {
+      "sign": "Aries",
+      "lord": "Mars"
+    },
+    "3": {
+      "sign": "Taurus",
+      "lord": "Venus"
+    },
+    "4": {
+      "sign": "Gemini",
+      "lord": "Mercury"
+    },
+    "5": {
+      "sign": "Cancer",
+      "lord": "Moon"
+    },
+    "6": {
+      "sign": "Leo",
+      "lord": "Sun"
+    },
+    "7": {
+      "sign": "Sagittarius",
+      "lord": "Jupiter"
+    },
+    "8": {
+      "sign": "Capricorn",
+      "lord": "Saturn"
+    },
+    "9": {
+      "sign": "Aquarius",
+      "lord": "Saturn"
+    },
+    "10": {
+      "sign": "Pisces",
+      "lord": "Jupiter"
+    },
+    "11": {
+      "sign": "Aries",
+      "lord": "Mars"
+    },
+    "12": {
+      "sign": "Taurus",
+      "lord": "Venus"
+    }
+  },
+  "ascendant": "Gemini",
+  "moon_sign": "Pisces",
+  "sun_sign": "Taurus",
+  "notes": "Imported from text format",
+  "source": "Manual Import",
+  "created_at": "2025-06-05T09:03:00.219128"
+}

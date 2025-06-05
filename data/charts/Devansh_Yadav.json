@@ -1,0 +1,231 @@
+{
+  "name": "Devansh_Yadav",
+  "birth_date": "2003-05-27",
+  "birth_time": "06:45",
+  "birth_location": "Jhansi, Uttar Pradesh, India",
+  "planets": {
+    "Sun": {
+      "sign": "Taurus",
+      "house": 1,
+      "degree": 11.477,
+      "retrograde": false,
+      "longitude": "11-28-37",
+      "nakshatra": "Rohini",
+      "pada": 1,
+      "status": "D",
+      "sign_nature": "Enemy",
+      "lord_of": ["4th"],
+      "full_aspects": ["7th"],
+      "aspected_by": ["Ketu"]
+    },
+    "Moon": {
+      "sign": "Pisces",
+      "house": 11,
+      "degree": 26.603,
+      "retrograde": false,
+      "longitude": "26-36-10",
+      "nakshatra": "Revati",
+      "pada": 3,
+      "status": "D",
+      "sign_nature": "Neutral",
+      "lord_of": ["3rd"],
+      "full_aspects": ["5th"],
+      "aspected_by": ["Jupiter", "Saturn", "Ketu"]
+    },
+    "Mars": {
+      "sign": "Capricorn",
+      "house": 9,
+      "degree": 26.074,
+      "retrograde": false,
+      "longitude": "26-04-25",
+      "nakshatra": "Dhanishta",
+      "pada": 1,
+      "status": "D",
+      "sign_nature": "Exalted",
+      "lord_of": ["12th", "7th"],
+      "full_aspects": ["12th", "3rd", "4th"],
+      "aspected_by": ["Jupiter", "Rahu"]
+    },
+    "Mercury": {
+      "sign": "Aries",
+      "house": 12,
+      "degree": 18.932,
+      "retrograde": false,
+      "longitude": "18-55-55",
+      "nakshatra": "Bharani",
+      "pada": 2,
+      "status": "D",
+      "sign_nature": "Neutral",
+      "lord_of": ["2nd", "5th"],
+      "full_aspects": ["6th"],
+      "aspected_by": ["Mars"]
+    },
+    "Jupiter": {
+      "sign": "Cancer",
+      "house": 3,
+      "degree": 18.164,
+      "retrograde": false,
+      "longitude": "18-09-51",
+      "nakshatra": "Ashlesha",
+      "pada": 1,
+      "status": "D",
+      "sign_nature": "Exalted",
+      "lord_of": ["8th", "11th"],
+      "full_aspects": ["7th", "9th", "11th"],
+      "aspected_by": ["Mars", "Ketu"]
+    },
+    "Venus": {
+      "sign": "Aries",
+      "house": 12,
+      "degree": 18.971,
+      "retrograde": false,
+      "longitude": "18-58-16",
+      "nakshatra": "Bharani",
+      "pada": 2,
+      "status": "D",
+      "sign_nature": "Neutral",
+      "lord_of": ["1st", "6th"],
+      "full_aspects": ["6th"],
+      "aspected_by": ["Mars"]
+    },
+    "Saturn": {
+      "sign": "Gemini",
+      "house": 2,
+      "degree": 5.088,
+      "retrograde": false,
+      "longitude": "05-05-15",
+      "nakshatra": "Mrigasira",
+      "pada": 4,
+      "status": "D",
+      "sign_nature": "Friendly",
+      "lord_of": ["9th", "10th"],
+      "full_aspects": ["4th", "8th", "11th"]
+    },
+    "Rahu": {
+      "sign": "Taurus",
+      "house": 1,
+      "degree": 5.391,
+      "retrograde": true,
+      "longitude": "05-23-27",
+      "nakshatra": "Krittika",
+      "pada": 3,
+      "status": "-",
+      "full_aspects": ["5th", "7th", "9th"],
+      "aspected_by": ["Ketu"]
+    },
+    "Ketu": {
+      "sign": "Scorpio",
+      "house": 7,
+      "degree": 5.391,
+      "retrograde": true,
+      "longitude": "05-23-27",
+      "nakshatra": "Anuradha",
+      "pada": 1,
+      "status": "-",
+      "full_aspects": ["11th", "1st", "3rd"],
+      "aspected_by": ["Sun", "Jupiter", "Rahu"]
+    },
+    "Uranus": {
+      "sign": "Aquarius",
+      "house": 10,
+      "degree": 8.968,
+      "retrograde": false,
+      "longitude": "08-58-06",
+      "nakshatra": "Satabhisa",
+      "pada": 1,
+      "status": "D",
+      "full_aspects": ["4th"]
+    },
+    "Neptune": {
+      "sign": "Capricorn",
+      "house": 9,
+      "degree": 19.184,
+      "retrograde": true,
+      "longitude": "19-11-03",
+      "nakshatra": "Sravana",
+      "pada": 3,
+      "status": "R",
+      "full_aspects": ["3rd"],
+      "aspected_by": ["Jupiter", "Rahu"]
+    },
+    "Pluto": {
+      "sign": "Scorpio",
+      "house": 7,
+      "degree": 24.983,
+      "retrograde": true,
+      "longitude": "24-58-57",
+      "nakshatra": "Jyeshtha",
+      "pada": 3,
+      "status": "R",
+      "full_aspects": ["1st"],
+      "aspected_by": ["Sun", "Jupiter", "Rahu"]
+    }
+  },
+  "houses": {
+    "1": {
+      "sign": "Taurus",
+      "lord": "Venus",
+      "planets": ["Sun", "Rahu"]
+    },
+    "2": {
+      "sign": "Gemini",
+      "lord": "Mercury",
+      "planets": ["Saturn"]
+    },
+    "3": {
+      "sign": "Cancer",
+      "lord": "Moon",
+      "planets": ["Jupiter"]
+    },
+    "4": {
+      "sign": "Leo",
+      "lord": "Sun"
+    },
+    "5": {
+      "sign": "Virgo",
+      "lord": "Mercury"
+    },
+    "6": {
+      "sign": "Libra",
+      "lord": "Venus"
+    },
+    "7": {
+      "sign": "Scorpio",
+      "lord": "Mars",
+      "planets": ["Ketu", "Pluto"]
+    },
+    "8": {
+      "sign": "Sagittarius",
+      "lord": "Jupiter"
+    },
+    "9": {
+      "sign": "Capricorn",
+      "lord": "Saturn",
+      "planets": ["Mars", "Neptune"]
+    },
+    "10": {
+      "sign": "Aquarius",
+      "lord": "Saturn",
+      "planets": ["Uranus"]
+    },
+    "11": {
+      "sign": "Pisces",
+      "lord": "Jupiter",
+      "planets": ["Moon"]
+    },
+    "12": {
+      "sign": "Aries",
+      "lord": "Mars",
+      "planets": ["Mercury", "Venus"]
+    }
+  },
+  "ascendant": "Taurus",
+  "ascendant_longitude": "29-57-15",
+  "ascendant_nakshatra": "Mrigasira",
+  "ascendant_pada": 2,
+  "moon_sign": "Pisces",
+  "sun_sign": "Taurus",
+  "notes": "Updated with accurate astronomical data including nakshatras, aspects, and planetary strengths",
+  "source": "Professional Astrology Software",
+  "created_at": "2025-06-05T09:11:50.808459"
+}

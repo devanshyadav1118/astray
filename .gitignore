@@ -1,0 +1,234 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Astrology AI Specific
+# Database files
+data/rules/*.db
+data/rules/*.sqlite
+data/rules/*.sqlite3
+
+# Log files
+data/logs/*.log
+data/logs/**/*.log
+*.log
+
+# Cache files
+data/cache/
+data/temp/
+.cache/
+
+# Backup files
+data/backup/
+*.backup
+*.bak
+
+# Processed PDFs (keep sample/test PDFs but not all processed books)
+data/books/*.pdf
+!data/books/sample*.pdf
+!data/books/test*.pdf
+
+# Export files (optional - you might want to keep some)
+data/exports/*.json
+data/exports/*.csv
+!data/exports/sample_export.json
+
+# Output files
+data/output/
+data/charts/output/
+reports/
+interpretations/
+
+# AI Model files (if downloaded locally)
+models/
+*.bin
+*.gguf
+*.safetensors
+
+# Configuration files with sensitive data
+config/app_config.yaml
+config/secrets.yaml
+config/local_config.yaml
+.secrets
+
+# Development files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Large data files
+*.tar.gz
+*.zip
+*.7z
+*.rar
+data/large_exports/
+
+# API keys and secrets
+.env.local
+.env.production
+.env.staging
+api_keys.txt
+secrets.txt
+
+# Test outputs
+test_output/
+test_reports/
+test_charts/
+
+# Documentation build
+docs/build/
+docs/_build/
+
+# Chart calculation cache
+chart_cache/
+ephemeris_cache/
+
+# AI response cache
+ai_cache/
+llm_cache/
+
+# Profiling data
+*.prof
+profile_results/
+
+# Memory dumps
+*.dump
+core.*
+
+# Editor backups
+*~
+.*.swp
+.*.swo

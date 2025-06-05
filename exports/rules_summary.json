@@ -1,0 +1,541 @@
+{
+  "generated_at": "2025-06-03T11:14:12.397023",
+  "summary": {
+    "total_rules": 180,
+    "sources_processed": 4,
+    "planets_covered": 9,
+    "authority_levels": 2
+  },
+  "breakdown": {
+    "by_source": {
+      "Saravali Volume 1": 114,
+      "Fundamentals of Vedic Astrology": 49,
+      "Houses significance in Kp astrology": 12,
+      "Brihat Parashara Hora Shastra - 12 Houses": 5
+    },
+    "by_planet": {
+      "Moon": 58,
+      "Sun": 37,
+      "Mercury": 22,
+      "Mars": 20,
+      "Venus": 16,
+      "Saturn": 12,
+      "Jupiter": 10,
+      "Rahu": 3,
+      "Ketu": 2
+    },
+    "by_authority_level": {
+      "1 (Classical)": 76,
+      "2 (Traditional)": 0,
+      "3 (Modern)": 104,
+      "4 (Commentary)": 0
+    }
+  },
+  "sample_rules": [
+    {
+      "id": "378bc8fa4a36",
+      "text": "JatakaJambunadeeyam addsthattheSuninAriesindentical withascendant gives wealth",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "50110c9831a3",
+      "text": "Inthe caseofabirthinLeoascendant, theSuninGeminigives afortunate fatherandexcellent resultsinhisDasa",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "860f77a530c0",
+      "text": "ForTaurus Lagna,theSunin4thinLeo,willgivegood employmental careerwhileinthe3rdforGemini ascen­ dant,...",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "ac4e30a314eb",
+      "text": "Notes:TheSuninSagittarius givesvariedeffectsfor the12ascendants asunder:Aries:Thenativewillearn abun...",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "c745fce0b8cb",
+      "text": "TheMoon 270 Saravall remaining inGeminiactsdifferently fordifferent ascen­ dantsasunder: Ariesascend...",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "1d2cf753ba4c",
+      "text": "Cancerascendant: The Mooninthe12thiffullwillkeepthenativefreefrom diseases andifwaningcausesdiseases...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Cancer",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "32e39bc084b5",
+      "text": "Taurus ascendant: Anafflicted Mooncauseslong-lasting infection, cold",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "5241a19a4911",
+      "text": "Aquarius ascendant: Weak Moonmakesthenativeseeksexualpleasures inillegal waysandcontract variousvene...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Aquarius",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "a9daf306c014",
+      "text": "Withreference tothe12ascendants, the MooninSagittarius, produces thefollowing effects: Ariesascendan...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "29125e8d1ce1",
+      "text": "Geminiascendant: WithweakMoon,themarried lifewillbe shortwhilefullMoongivesunexpected richesinspecul...",
+      "planet": "Sun",
+      "house": 1,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "0c2498602d8b",
+      "text": "Chapter23 291 Ariesascendant: TheMooninthe10thcausesRa­ jayogaandspiritual achievements",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "e74a2003685a",
+      "text": "Leoascendant: TheMoon,ifweak,brings insult/defeat fromenemies whileFullMoongivesassocia­ tionwithman...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Leo",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "07bafde9848d",
+      "text": "Scorpioascendant: WeakMoondestroys otherRajayogas whileFullMoonmakesthenativegiveawaythepatrimony to...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Scorpio",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "24e9254e5a4b",
+      "text": "Notes:TheMooninAquartus is capable ofproducing thefollowing different effectsforthevarious risingSig...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "3d2283f204a5",
+      "text": "Shegivesthe following variedeffectsdepending ontheascending signat birth: Ariesascendant: Thesubject...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "4ffbc4ecdbd3",
+      "text": "(According toBhrtguSutras,Mercury inGeminiorinVirgo ascendant giveshappiness frombrothers andattainm...",
+      "planet": "Mercury",
+      "house": 1,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "e803fe054b8e",
+      "text": "' Chapter 26 341 Inindividualcasesofdifferent ascendants, Mercury in Leoproduces theundermentioned e...",
+      "planet": "Mercury",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "6489e9d3d63f",
+      "text": "Taurusascendant: Mercury in Libragivesworriesonaccount ofmonetary problems and ofchildren",
+      "planet": "Mercury",
+      "house": 1,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "2ca521b2417c",
+      "text": "Forvariousascendants, heproduces under­ mentioned effects: Ariesascendant: TheinitialpartofMercury d...",
+      "planet": "Mercury",
+      "house": 1,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 1.0
+    },
+    {
+      "id": "f356d13c4dfc",
+      "text": "In the Ascendant, Jupiter gives a good healthy body and a religious mind; in the Tenth house the ind...",
+      "planet": "Jupiter",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "eea0891e0b48",
+      "text": "Along with Mercury, Jupiter or Venus, the Ascendant lord in the Cardinal houses or in the Trines mak...",
+      "planet": "Mercury",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "3dcf0048200e",
+      "text": "Saturn inflicts death, Venus produces \"death-like symptoms,\" while the Ascendant lord Jupiter can be...",
+      "planet": "Jupiter",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "f36c64855224",
+      "text": "If the Ascendant lord, Moon and Sun are powerful as a result of exaltation, mulatrikona or ownership...",
+      "planet": "Sun",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "7d46c9de8e36",
+      "text": "If Jupiter is placed in the Seventh house in association with the Moon, it will aspect the Ascendant...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "52cfcb3cb05b",
+      "text": "The classical astrological texts have indicated several other variations for the occur- rence of Gaj...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "68e79ef56d76",
+      "text": "The unaspected lord of the Ascendant aspecting Saturn produces asceticism 2",
+      "planet": "Saturn",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "78021bfcbcd1",
+      "text": "From the above, it can be observed that Saturn's aspect on the lord of the Ascendant as well as on t...",
+      "planet": "Moon",
+      "house": 1,
+      "sign": null,
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "027de6093786",
+      "text": "Malefics inthe 4thfromLagnaortheMooninAdhana chartcausesthe sameeffect",
+      "planet": "Moon",
+      "house": 1,
+      "sign": null,
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.95
+    },
+    {
+      "id": "saravali_volume_1_51",
+      "text": "Chapter 23 291 A riesascendant: The Moon in the 10 thcauses Ra­ jayogaandspiritual a chievements",
+      "planet": "Moon",
+      "house": 10,
+      "sign": null,
+      "source": "Saravali Volume 1",
+      "authority_level": 1,
+      "confidence": 0.9
+    },
+    {
+      "id": "c952df58ca74",
+      "text": "Esoterically, Aries maintains a strong link with the central invisible Sun God which makes the sign ...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Aries",
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "b71ee753cff6",
+      "text": "Conjunct with the Sun in the Eighth house — especially in Sagittarius, Capricorn, Aquarius, or Pisce...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Sagittarius",
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "11f434f7bf32",
+      "text": "For example, in the illustrative horoscope, if Saturn has the longitude of 21° 20' Libra, which give...",
+      "planet": "Saturn",
+      "house": null,
+      "sign": "Libra",
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "88fb6564bdea",
+      "text": "Capricorn relates adversely with Mars, Jupiter and the Moon and Saturn's association with these plan...",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Capricorn",
+      "source": "Houses significance in Kp astrology",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "0a2c45201609",
+      "text": "JatakaTatwa(B-138)alsodenotes fatefuldegrees for theMoonfromAriesonwards respectively thus:8,9,23, 2...",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "e3c27c08626c",
+      "text": "6, sloka14)thus:TheMooninanangleoftheSuncauses Adhama yoga;inPanaphara itcausesSarna(,ij'q)yogaand i...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Leo",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "62854a6a6a27",
+      "text": "ForaGemini native,theSuninthe11thinAries,makeshimrich through brothers andbestows statusinSun'sdasa",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Aries",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "6f22f508bfa9",
+      "text": "SUNINTAURUS: Theposition oftheSuninthe signTaurus indicates thatthenativewillhavetroubles fromdiseas...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "4e3b4426ee47",
+      "text": "Saturnaspectmg theSunin fallorinTaurus denotes thatthenativewillbemean, indolent, willcohabit withag...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "3f5ad9237744",
+      "text": "SUNINCANCER: TheSuninCancerindicates thatthenativewillnotbesteadyinmindinrespectofhis undertakings, ...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Cancer",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "173d5712ec60",
+      "text": "Marsaspecttng herinTaurus, makestheper­ sonverysensuous andheissuretobeofquestionable character",
+      "planet": "Mars",
+      "house": null,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "f9effc5879d3",
+      "text": "Notes:TheMooninGeminiascending, atbirth,gives thequalities ofMercury tothenativeingeneral",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "79fd8cf6cf94",
+      "text": "TheMoon inGeminiaspeeted byMercury makesonesk1lfu1in pro­ ducingmoney, alwayssuccessful andinviolabl...",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "4c462e049e22",
+      "text": "Notes:WhiletheaspectoftheSunontheMoonin Scorpiohasitsbrighter side,ithasitsadversephaseaswell inthat...",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "ad35fd7f4dc0",
+      "text": "touchfromTaurusontheMoongivesabundant wealth, beautiful andlibidinous wife,andbusiness inbeautifying...",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Taurus",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "2e7d69ebeb15",
+      "text": "TheMoon-whether FullorNew-in SagittariUS makesaGeminian pronetoaccidents causedbyfallfrom height",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "d9ed8665f1a2",
+      "text": "Inthegeneralcontext, the MooninSagittarius aspected bytheSungivesriches, fortune, vehicles etc",
+      "planet": "Sun",
+      "house": null,
+      "sign": "Sagittarius",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "6cb4f6d74536",
+      "text": "EvenSaturn's aspectontheMooninSagittarius givesgoodtendencies, \"knowledge ofsciences galore,truthful...",
+      "planet": "Moon",
+      "house": null,
+      "sign": "Sagittarius",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "b1ba67b0436a",
+      "text": "Theposition ofMarsinPiscesalsoindicates a shortliving mother",
+      "planet": "Mars",
+      "house": null,
+      "sign": "Pisces",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "a4ac5cbf58f2",
+      "text": "Notes:Mercury inGemini givesabeautiful appear­ ance",
+      "planet": "Mercury",
+      "house": null,
+      "sign": "Gemini",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    },
+    {
+      "id": "f8391a029061",
+      "text": "Mercury aloneinCancerwilldenoteserious trouble formother's longevity",
+      "planet": "Mercury",
+      "house": null,
+      "sign": "Cancer",
+      "source": "Saravali Volume 1",
+      "authority_level": 3,
+      "confidence": 0.8999999999999999
+    }
+  ],
+  "how_to_access": {
+    "complete_export": "exports/all_rules_fixed.json",
+    "search_command": "python main.py cli search-rules --planet Jupiter --limit 10",
+    "export_command": "python main.py cli export-knowledge"
+  }
+}

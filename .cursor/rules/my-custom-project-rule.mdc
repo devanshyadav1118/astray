@@ -1,0 +1,296 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Astrology AI Project - Cursor IDE Configuration
+
+## Project Overview
+You are working on an **Astrology AI system** that extracts knowledge from classical Vedic astrology texts and builds an intelligent interpretation engine. This is a learning project where the developer is building their astrology knowledge alongside the AI system.
+
+### Mission Statement
+Building a bridge between ancient Vedic wisdom and modern AI to create an intelligent astrology companion that learns from classical texts and provides accurate, source-attributed interpretations.
+
+## Project Context & Current Status
+
+### Phase 1: Foundation & Rule Extraction (Current)
+- **Goal**: Extract and structure astrological knowledge from PDF texts
+- **Status**: Core architecture established, implementing rule extraction
+- **Tech Stack**: Python 3.9+, SQLite, spaCy NLP, Click CLI, Pydantic
+- **Priority**: Accuracy and source attribution over speed
+
+### Project Architecture
+```
+astrology_ai/
+├── src/
+│   ├── __init__.py              # Main AstrologyAI class
+│   ├── data_models.py           # Pydantic models for rules and charts
+│   ├── document_processor.py    # PDF extraction & text cleaning
+│   ├── rule_extractor.py        # NLP-based rule parsing with regex
+│   ├── knowledge_base.py        # SQLite database with search capabilities
+│   └── cli.py                   # Click-based command interface
+├── data/
+│   ├── books/                   # PDF storage for classical texts
+│   ├── rules/                   # SQLite database files
+│   └── charts/                  # Future: generated chart data
+├── config/
+│   └── sources.yaml             # Source authority hierarchy
+├── main.py                      # Application entry point
+└── requirements.txt             # Python dependencies
+```
+
+## Coding Standards & Preferences
+
+### Python Development Standards
+- **Type Hints**: Always use comprehensive type hints
+- **Error Handling**: Robust exception handling with meaningful messages
+- **Logging**: Use Python logging module with appropriate levels
+- **Documentation**: Docstrings for all classes and non-trivial functions
+- **Testing**: Write testable code with dependency injection
+
+### Code Style Preferences
+```python
+# Preferred function signature style
+def extract_planetary_rules(
+    self, 
+    text: str, 
+    confidence_threshold: float = 0.7
+) -> List[AstrologicalRule]:
+    """Extract planetary placement rules from text.
+    
+    Args:
+        text: Input text containing astrological content
+        confidence_threshold: Minimum confidence for rule acceptance
+        
+    Returns:
+        List of extracted astrological rules
+        
+    Raises:
+        ExtractionError: If text processing fails
+    """
+```
+
+### Data Models & Domain Objects
+```python
+# Core data structures - always use these patterns
+@dataclass
+class AstrologicalRule:
+    id: str
+    text: str                    # Original rule text from source
+    conditions: Dict[str, Any]   # planet, house, sign, aspects
+    effects: List[str]           # Predicted outcomes/results
+    source: str                  # Book title/author
+    page: Optional[int]          # Page reference
+    authority_level: int         # 1=classical, 2=traditional, 3=modern
+    confidence: float            # Extraction confidence (0.0-1.0)
+    tags: List[str]             # Classification tags
+    created_at: datetime
+    
+# Common condition patterns
+conditions = {
+    "planet": "Mars",           # Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu
+    "house": 7,                 # 1-12 (Lagna through Vyaya)
+    "sign": "Aries",           # Aries through Pisces
+    "strength": "exalted",      # own, exalted, debilitated, neutral
+    "aspect": "conjunction"     # conjunction, trine, square, opposition
+}
+```
+
+## Vedic Astrology Domain Knowledge
+
+### Core Entities & Terminology
+- **Planets (Grahas)**: Sun/Surya, Moon/Chandra, Mars/Mangal, Mercury/Budha, Jupiter/Guru, Venus/Shukra, Saturn/Shani, Rahu, Ketu
+- **Houses (Bhavas)**: 1-Lagna(Self), 2-Dhana(Wealth), 3-Sahaja(Siblings), 4-Bandhu(Home), 5-Putra(Children), 6-Ari(Enemies), 7-Kalatra(Marriage), 8-Randhra(Death), 9-Dharma(Religion), 10-Karma(Career), 11-Labha(Gains), 12-Vyaya(Loss)
+- **Signs (Rashis)**: Mesha(Aries) through Meena(Pisces)
+- **Nakshatras**: 27 lunar mansions from Ashwini to Revati
+
+### Classical Source Authority Hierarchy
+1. **Classical (Highest Authority)**: BPHS, Jataka Parijata, Phaladeepika, Saravali
+2. **Traditional**: Medieval commentaries and established authors
+3. **Modern**: Contemporary interpretations and synthesis works
+
+### Rule Extraction Patterns
+```python
+# Pattern recognition priorities
+PLANETARY_PATTERNS = [
+    r"(\w+)\s+in\s+(\d+(?:st|nd|rd|th)?\s+house)",     # "Mars in 7th house"
+    r"(\w+)\s+in\s+(\w+)",                             # "Jupiter in Sagittarius"
+    r"(\w+)\s+conjunct\s+(\w+)",                       # "Mars conjunct Saturn"
+]
+
+EFFECT_INDICATORS = [
+    "causes", "gives", "indicates", "brings", "creates", "produces", 
+    "results in", "leads to", "bestows", "grants", "confers"
+]
+
+CONDITION_KEYWORDS = [
+    "when", "if", "in own sign", "in exaltation", "debilitated",
+    "retrograde", "combust", "strong", "weak"
+]
+```
+
+## Development Workflow & Best Practices
+
+### Error Handling Patterns
+```python
+# Preferred error handling approach
+from typing import Optional, Union
+from dataclasses import dataclass
+
+@dataclass
+class ProcessingResult:
+    success: bool
+    data: Optional[Any] = None
+    message: str = ""
+    warnings: List[str] = field(default_factory=list)
+    
+    @classmethod
+    def success_with_data(cls, data: Any, message: str = "") -> 'ProcessingResult':
+        return cls(success=True, data=data, message=message)
+    
+    @classmethod
+    def failure(cls, message: str) -> 'ProcessingResult':
+        return cls(success=False, message=message)
+
+# Usage in functions
+def process_document(pdf_path: str) -> ProcessingResult:
+    try:
+        text = extract_pdf_text(pdf_path)
+        rules = extract_rules(text)
+        return ProcessingResult.success_with_data(rules, f"Extracted {len(rules)} rules")
+    except DocumentError as e:
+        logger.error(f"Document processing failed: {e}")
+        return ProcessingResult.failure(str(e))
+```
+
+### Testing Approach
+```python
+# Test structure for rule extraction
+def test_mars_house_extraction():
+    text = "Mars in the 7th house causes discord in marriage"
+    extractor = RuleExtractor()
+    rules = extractor.extract_planetary_rules(text)
+    
+    assert len(rules) == 1
+    assert rules[0].conditions["planet"] == "Mars"
+    assert rules[0].conditions["house"] == 7
+    assert "discord" in rules[0].effects[0]
+```
+
+### CLI Design Philosophy
+```python
+# Use Click for intuitive command structure
+@click.group()
+def cli():
+    """Astrology AI - Extract and explore astrological knowledge."""
+    pass
+
+@cli.command()
+@click.argument('pdf_path', type=click.Path(exists=True))
+@click.option('--source-title', required=True, help='Book title')
+@click.option('--authority', type=click.Choice(['classical', 'traditional', 'modern']))
+@click.option('--extract-rules/--no-extract-rules', default=True)
+def process_book(pdf_path: str, source_title: str, authority: str, extract_rules: bool):
+    """Process an astrology book and extract rules."""
+```
+
+## Current Development Priorities
+
+### Phase 1 Immediate Goals
+1. **Document Processing**: Robust PDF text extraction with proper cleaning
+2. **Rule Extraction**: High-accuracy pattern matching for planetary rules
+3. **Knowledge Storage**: SQLite schema with full-text search capabilities
+4. **CLI Interface**: Complete command set for book processing and rule exploration
+
+### Code Quality Standards
+- **Accuracy First**: Extracted rules must be faithful to source material
+- **Source Attribution**: Every rule must link back to its source book/page
+- **Confidence Scoring**: Track and display extraction confidence levels
+- **Extensibility**: Easy to add new extraction patterns and rule types
+
+### Performance Considerations
+- **Memory Efficiency**: Process large PDFs in chunks
+- **Database Optimization**: Index commonly searched fields
+- **Caching**: Cache processed text and extracted rules
+- **Progress Tracking**: Show progress for long-running operations
+
+## Future Architecture Considerations
+
+### Phase 2: Chart Engine (Don't implement yet, but design for)
+- **Astronomical Calculations**: Integration with Swiss Ephemeris
+- **Chart Generation**: Vedic chart calculation and visualization
+- **Rule Matching**: Apply extracted rules to birth charts
+- **Interpretation Engine**: Generate human-readable interpretations
+
+### Phase 3: AI Enhancement
+- **LLM Integration**: Use Claude/GPT for complex rule extraction
+- **Natural Language Queries**: "Show me rules about career success"
+- **Continuous Learning**: Feedback loops for rule refinement
+- **Web Interface**: API endpoints for future frontend
+
+## When Writing Code
+
+### Always Include
+- Comprehensive type hints
+- Detailed docstrings with examples
+- Error handling with specific exception types
+- Logging at appropriate levels
+- Source attribution for extracted data
+
+### Code Organization Patterns
+```python
+# Factory pattern for extractors
+class ExtractorFactory:
+    @staticmethod
+    def create_extractor(rule_type: str) -> BaseExtractor:
+        extractors = {
+            "planetary": PlanetaryRuleExtractor(),
+            "house": HouseRuleExtractor(), 
+            "yoga": YogaRuleExtractor()
+        }
+        return extractors.get(rule_type, DefaultExtractor())
+
+# Strategy pattern for different processing approaches
+class ProcessingStrategy(ABC):
+    @abstractmethod
+    def process(self, text: str) -> List[AstrologicalRule]:
+        pass
+
+class ClassicalTextStrategy(ProcessingStrategy):
+    def process(self, text: str) -> List[AstrologicalRule]:
+        # Specific logic for classical Sanskrit texts
+        pass
+```
+
+### Database Interaction Patterns
+```python
+# Use context managers for database operations
+class KnowledgeBase:
+    def add_rule(self, rule: AstrologicalRule) -> bool:
+        with self.get_connection() as conn:
+            try:
+                conn.execute(INSERT_RULE_SQL, rule.to_dict())
+                conn.commit()
+                return True
+            except sqlite3.IntegrityError as e:
+                logger.warning(f"Duplicate rule detected: {e}")
+                return False
+```
+
+## Cursor-Specific Features to Leverage
+
+### AI Pair Programming
+- Use Cursor's AI for complex regex pattern development
+- Leverage AI for generating test cases with astrological examples
+- Get suggestions for handling edge cases in text processing
+
+### Code Suggestions
+- Focus AI suggestions on astrology domain accuracy
+- Use AI to help with Sanskrit term transliteration
+- Leverage for creating comprehensive error messages
+
+### Debugging
+- Set breakpoints in rule extraction logic
+- Use Cursor's debugging for tracing confidence score calculations
+- Monitor memory usage during PDF processing
+Remember: This project bridges ancient wisdom with modern technology. Every line of code should respect both the precision of software engineering and the depth of astrological tradition.

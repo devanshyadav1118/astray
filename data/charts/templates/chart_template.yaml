@@ -1,0 +1,83 @@
+name: Sample Person
+birth_date: '1990-01-15'
+birth_time: '14:30'
+birth_location: New Delhi, India
+planets:
+  Sun:
+    sign: Capricorn
+    house: 1
+    degree: 25.5
+  Moon:
+    sign: Scorpio
+    house: 11
+    degree: 12.3
+  Mars:
+    sign: Sagittarius
+    house: 12
+    degree: 8.7
+  Mercury:
+    sign: Capricorn
+    house: 1
+    degree: 15.2
+  Jupiter:
+    sign: Gemini
+    house: 6
+    degree: 22.8
+  Venus:
+    sign: Aquarius
+    house: 2
+    degree: 5.4
+  Saturn:
+    sign: Capricorn
+    house: 1
+    degree: 18.9
+  Rahu:
+    sign: Aquarius
+    house: 2
+    degree: 28.1
+  Ketu:
+    sign: Leo
+    house: 8
+    degree: 28.1
+houses:
+  1:
+    sign: Capricorn
+    lord: Saturn
+  2:
+    sign: Aquarius
+    lord: Saturn
+  3:
+    sign: Pisces
+    lord: Jupiter
+  4:
+    sign: Aries
+    lord: Mars
+  5:
+    sign: Taurus
+    lord: Venus
+  6:
+    sign: Gemini
+    lord: Mercury
+  7:
+    sign: Cancer
+    lord: Moon
+  8:
+    sign: Leo
+    lord: Sun
+  9:
+    sign: Virgo
+    lord: Mercury
+  10:
+    sign: Libra
+    lord: Venus
+  11:
+    sign: Scorpio
+    lord: Mars
+  12:
+    sign: Sagittarius
+    lord: Jupiter
+ascendant: Capricorn
+moon_sign: Scorpio
+sun_sign: Capricorn
+notes: Sample chart for demonstration
+source: Manual Input

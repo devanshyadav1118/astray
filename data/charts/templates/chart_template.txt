@@ -1,0 +1,41 @@
+# Simple Chart Data Template
+# Copy this template and fill in your chart details
+
+Name: Sample Person
+Birth Date: 1990-01-15
+Birth Time: 14:30
+Birth Location: New Delhi, India
+
+# Planetary Positions (Planet: Sign, House, Degree)
+Sun: Capricorn, 1, 25.5
+Moon: Scorpio, 11, 12.3
+Mars: Sagittarius, 12, 8.7
+Mercury: Capricorn, 1, 15.2
+Jupiter: Gemini, 6, 22.8
+Venus: Aquarius, 2, 5.4
+Saturn: Capricorn, 1, 18.9
+Rahu: Aquarius, 2, 28.1
+Ketu: Leo, 8, 28.1
+
+# House Signs (House: Sign, Lord)
+1: Capricorn, Saturn
+2: Aquarius, Saturn
+3: Pisces, Jupiter
+4: Aries, Mars
+5: Taurus, Venus
+6: Gemini, Mercury
+7: Cancer, Moon
+8: Leo, Sun
+9: Virgo, Mercury
+10: Libra, Venus
+11: Scorpio, Mars
+12: Sagittarius, Jupiter
+
+# Basic Info
+Ascendant: Capricorn
+Moon Sign: Scorpio
+Sun Sign: Capricorn
+
+# Notes
+Notes: Sample chart for demonstration
+Source: Manual Input

@@ -1,0 +1,347 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Astrology AI Project - Cursor IDE Modular Architecture Rules
+
+## 🎯 CORE RULE: MAXIMUM FILE SIZE LIMIT
+**CRITICAL**: No Python file should exceed 300-400 lines. When a file approaches this limit, automatically suggest splitting it into logical modules with proper imports and functionality.
+
+## 📏 File Size Management Strategy
+
+### File Size Guidelines
+- **Target**: 200-300 lines per file
+- **Warning**: 300+ lines - suggest refactoring
+- **Action Required**: 400+ lines - must split immediately
+- **Exception**: Only configuration files, constants, or data files may exceed this limit
+
+### Modular Architecture Patterns
+
+#### 1. **Core Module Split Pattern**
+When a main module gets too large, split into:
+```
+# Original: large_module.py (400+ lines)
+# Split into:
+large_module/
+├── __init__.py          # Public API exports
+├── core.py             # Main class/functionality  
+├── handlers.py         # Event/request handlers
+├── utils.py            # Helper functions
+├── exceptions.py       # Custom exceptions
+└── constants.py        # Constants and configs
+```
+
+#### 2. **Class-Based Split Pattern**
+For large classes, split into:
+```
+# Original: MonolithClass (300+ lines)
+# Split into:
+class_module/
+├── __init__.py         # Main class import
+├── base.py            # Base class with core methods
+├── processors.py      # Processing methods
+├── validators.py      # Validation methods
+├── formatters.py      # Output formatting methods
+└── mixins.py          # Reusable functionality
+```
+
+#### 3. **Feature-Based Split Pattern**
+For feature-heavy modules:
+```
+feature_module/
+├── __init__.py        # Feature API
+├── models.py          # Data models
+├── services.py        # Business logic
+├── repositories.py    # Data access
+├── validators.py      # Input validation
+└── serializers.py     # Data serialization
+```
+
+## 🏗️ Astrology AI Specific Split Patterns
+
+### DocumentProcessor Split Example
+```python
+# When document_processor.py exceeds 300 lines, split into:
+document_processing/
+├── __init__.py         # Main DocumentProcessor class
+├── extractors.py       # PDF text extraction
+├── cleaners.py         # Text cleaning and preprocessing
+├── chunkers.py         # Text chunking strategies
+├── ocr_handlers.py     # OCR correction logic
+└── format_handlers.py  # Handle different PDF formats
+```
+
+### RuleExtractor Split Example
+```python
+# When rule_extractor.py exceeds 300 lines, split into:
+rule_extraction/
+├── __init__.py         # Main RuleExtractor class
+├── patterns.py         # Regex patterns and matchers
+├── planetary_rules.py  # Planetary rule extraction
+├── house_rules.py      # House-based rule extraction
+├── yoga_rules.py       # Yoga combination extraction
+├── confidence.py       # Confidence scoring logic
+└── validators.py       # Rule validation
+```
+
+### KnowledgeBase Split Example
+```python
+# When knowledge_base.py exceeds 300 lines, split into:
+knowledge_base/
+├── __init__.py         # Main KnowledgeBase class
+├── database.py         # SQLite connection and setup
+├── queries.py          # SQL query builders
+├── search.py           # Search and filtering logic
+├── migrations.py       # Database schema migrations
+├── indexing.py         # Full-text search indexing
+└── backup.py           # Backup and restore logic
+```
+
+## 🔧 Implementation Rules for Splits
+
+### 1. **Always Maintain Public API**
+```python
+# In __init__.py - preserve the original interface
+from .core import MainClass
+from .handlers import SpecificHandler
+from .utils import helper_function
+
+# Export the same interface as before
+__all__ = ['MainClass', 'SpecificHandler', 'helper_function']
+
+# Maintain backward compatibility
+DocumentProcessor = MainClass  # If class was renamed
+```
+
+### 2. **Use Dependency Injection**
+```python
+# Don't create tight coupling between split modules
+class MainClass:
+    def __init__(self, extractor=None, cleaner=None):
+        self.extractor = extractor or DefaultExtractor()
+        self.cleaner = cleaner or DefaultCleaner()
+        
+    @classmethod
+    def create_default(cls):
+        """Factory method for default configuration"""
+        from .extractors import PDFExtractor
+        from .cleaners import TextCleaner
+        return cls(
+            extractor=PDFExtractor(),
+            cleaner=TextCleaner()
+        )
+```
+
+### 3. **Clear Module Responsibilities**
+```python
+# Each module should have ONE clear responsibility
+
+# extractors.py - ONLY text extraction
+class PDFExtractor:
+    def extract_text(self, pdf_path: str) -> str: ...
+    def extract_metadata(self, pdf_path: str) -> dict: ...
+
+# cleaners.py - ONLY text cleaning  
+class TextCleaner:
+    def clean_text(self, text: str) -> str: ...
+    def normalize_whitespace(self, text: str) -> str: ...
+
+# validators.py - ONLY validation
+class TextValidator:
+    def is_valid_astrological_text(self, text: str) -> bool: ...
+    def check_minimum_quality(self, text: str) -> bool: ...
+```
+
+### 4. **Proper Import Structure**
+```python
+# Use relative imports within the package
+from .base import BaseExtractor
+from ..models import AstrologicalRule
+from ...config import get_config
+
+# Use absolute imports for external dependencies
+from pathlib import Path
+import sqlite3
+from dataclasses import dataclass
+```
+
+## 🚨 Auto-Split Triggers
+
+### When Cursor Should Suggest Splitting:
+
+1. **Line Count Trigger**: File approaches 300 lines
+2. **Class Size Trigger**: Single class exceeds 150 lines
+3. **Function Count Trigger**: More than 15 functions in one file
+4. **Complexity Trigger**: Multiple unrelated responsibilities detected
+5. **Import Count Trigger**: More than 20 imports (suggests too many dependencies)
+
+### Split Suggestion Format:
+```
+🔄 REFACTOR SUGGESTION: This file has grown to 320 lines.
+Consider splitting into:
+
+1. core.py - Main class and essential methods (120 lines)
+2. processors.py - Processing methods (90 lines)  
+3. validators.py - Validation logic (70 lines)
+4. utils.py - Helper functions (40 lines)
+
+Would you like me to help create this modular structure?
+```
+
+## 📋 Code Organization Principles
+
+### 1. **Single Responsibility Per File**
+- One main class or one group of related functions per file
+- Clear, descriptive file names that indicate purpose
+- No mixing of concerns (data access + business logic + presentation)
+
+### 2. **Logical Grouping**
+```python
+# Group related functionality together
+models/          # Data structures and schemas
+├── rules.py     # Rule-related models
+├── charts.py    # Chart-related models
+└── sources.py   # Source-related models
+
+services/        # Business logic
+├── extraction.py    # Rule extraction service
+├── interpretation.py # Chart interpretation service
+└── validation.py    # Validation services
+
+repositories/    # Data access
+├── rule_repo.py     # Rule database operations
+├── source_repo.py   # Source management
+└── chart_repo.py    # Chart storage
+```
+
+### 3. **Dependency Direction**
+```
+High Level → Low Level
+Services → Repositories → Models
+CLI → Services → Repositories
+```
+
+### 4. **Interface Segregation**
+```python
+# Create focused interfaces instead of monolithic ones
+class RuleExtractor(Protocol):
+    def extract_rules(self, text: str) -> List[AstrologicalRule]: ...
+
+class ConfidenceScorer(Protocol):
+    def score_rule(self, rule: AstrologicalRule) -> float: ...
+
+class RuleValidator(Protocol):
+    def validate_rule(self, rule: AstrologicalRule) -> bool: ...
+```
+## 🔍 File Review Checklist
+
+Before accepting any file, check:
+- [ ] **Line count < 300**: File is within size limits
+- [ ] **Single responsibility**: File has one clear purpose  
+- [ ] **Clear naming**: File name reflects its contents
+- [ ] **Proper imports**: No circular dependencies
+- [ ] **Documentation**: Classes and functions have docstrings
+- [ ] **Type hints**: All function signatures have types
+- [ ] **Error handling**: Appropriate exception handling
+- [ ] **Testing**: File structure supports easy testing
+
+## 🛠️ Refactoring Workflow
+
+### Step 1: Identify Split Points
+```python
+# Look for natural boundaries:
+# - Different classes
+# - Groups of related functions
+# - Different concerns (validation vs processing)
+# - Different abstraction levels
+```
+
+### Step 2: Create Module Structure
+```python
+# Create package directory
+mkdir new_module
+touch new_module/__init__.py
+
+# Move code to logical files
+# Update imports
+# Test functionality
+```
+
+### Step 3: Preserve Interface
+```python
+# Ensure external code still works
+# Update __init__.py with proper exports
+# Add deprecation warnings if needed
+```
+
+### Step 4: Update Tests
+```python
+# Update test imports
+# Ensure test coverage is maintained
+# Add integration tests for the new module structure
+```
+
+## 🎯 Astrology AI Module Targets
+
+### Current Large Files to Monitor:
+1. **document_processor.py** - Watch for text extraction complexity
+2. **rule_extractor.py** - Multiple extraction patterns and logic
+3. **knowledge_base.py** - Database operations and search logic
+4. **cli.py** - Multiple command implementations
+5. **main.py** - Application orchestration
+
+### Suggested Future Structure:
+```
+src/
+├── core/               # Core business logic
+├── data/               # Data models and schemas  
+├── services/           # Application services
+├── repositories/       # Data access layer
+├── processors/         # Text and document processing
+├── extractors/         # Rule extraction modules
+├── cli/               # Command-line interface modules
+├── utils/             # Utility functions
+└── config/            # Configuration management
+```
+
+## 💡 Best Practices for Small Files
+
+### 1. **Focus and Clarity**
+- Each file should be easily understandable in 5 minutes
+- Clear separation of concerns
+- Minimal cognitive load
+
+### 2. **Easy Testing**
+- Small files are easier to test
+- Clear dependencies make mocking easier
+- Single responsibility makes test cases clearer
+
+### 3. **Better Collaboration**
+- Less merge conflicts
+- Easier code reviews
+- Clearer ownership of functionality
+
+### 4. **Maintenance**
+- Easier to debug and modify
+- Lower risk of introducing bugs
+- Simpler to understand and extend
+
+## 🚀 Implementation Strategy
+
+### Phase 1: Monitor and Warn
+- Track file sizes during development
+- Warn when files approach 300 lines
+- Suggest split strategies
+
+### Phase 2: Guided Refactoring
+- Provide specific split suggestions
+- Help create new module structures
+- Ensure backward compatibility
+
+### Phase 3: Automated Assistance
+- Auto-generate module skeletons
+- Suggest import updates
+- Validate new structure
+
+Remember: **Small, focused files lead to better architecture, easier testing, and more maintainable code.** Every split should make the code clearer and more organized, not more complex.

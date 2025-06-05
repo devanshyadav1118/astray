@@ -1,0 +1,41 @@
+# Core dependencies for Astrology AI Phase 1
+PyPDF2>=3.0.1
+pdfplumber>=0.10.0
+spacy>=3.6.0
+click>=8.1.0
+pydantic>=2.0.0
+sqlalchemy>=2.0.0
+
+# Configuration management
+PyYAML>=6.0
+
+# Additional utilities
+python-dateutil>=2.8.2
+
+# Astrological calculations
+pyephem>=4.1.0
+astropy>=7.0.0
+flatlib==0.2.3
+pyswisseph>=2.10.0
+
+# Phase 2 additions for chart calculation
+swisseph>=2.8.0          # Swiss Ephemeris for astronomical calculations
+pyepheus>=0.3.0          # Alternative ephemeris library (backup)
+astropy>=5.1             # Advanced astronomical computations
+pytz>=2023.3             # Timezone handling
+timezonefinder>=6.2.0    # Coordinate-based timezone detection
+geopy>=2.3.0             # Location services and geocoding
+
+# Data validation and enhanced models
+marshmallow>=3.19.0      # Additional data validation
+jinja2>=3.1.2            # Template engine for interpretation text
+
+# CLI enhancements
+tabulate>=0.9.0          # Formatted tables for better display
+colorama>=0.4.6          # Colored CLI output
+
+# Web scraping dependencies (fallback option)
+selenium>=4.15.0         # Web browser automation
+beautifulsoup4>=4.12.0   # HTML parsing
+requests>=2.31.0         # HTTP requests
+webdriver-manager>=4.0.1 # Automatic ChromeDriver management
